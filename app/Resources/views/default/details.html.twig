@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body%}
+    <h2 class="page-header">{{ todo.name }}</h2>
+
+    <div class="text-muted small my-1">
+        Created at: {{ todo.createDate|date('Y M. j, g:i a') }} 
+        {% if (todo.createDate < todo.updateDate) %}
+            <br />Updated: {{ todo.updateDate|date('Y M. j, g:i a') }}
+        {% endif %}
+    </div>
+
+    <ul>
+        <li>Priority: {{ todo.priority }}</li>
+        <li>Due date: {{ todo.dueDate|date('F j, Y, g:i a') }}</li>
+    </ul>
+
+    <p class="lead">{{ todo.description }}</p>
+
+    <a href="{{ path('home') }}" class="btn btn-secondary mt-3">Back to homepage</a>
+{% endblock %}

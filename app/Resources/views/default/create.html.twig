@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <h2 class="page-header">Create new Todo</h2>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+
+        <div class="form-group row mt-3">
+            <div class="col-sm-6">
+                <a href="{{ path('home') }}" class="btn btn-secondary">Back to homepage</a>
+            </div>
+            <div class="col-sm-6 text-right">
+                <button type="submit" class="btn btn-primary text-right">Create Todo</button>
+            </div>
+        </div>
+    {{ form_end(form) }}
+{% endblock %}
